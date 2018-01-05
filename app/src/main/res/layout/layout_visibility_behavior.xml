@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--
+        我们在gone掉一个控件的时候会破坏掉布局结构，通常情况下这不是我们想要的结果，于是constraintLayout有了layout_goneMargin属性
+        gone掉的控件会被解析成一个点，并忽略margin，当你为其设置了约束也还是会起作用
+        经常配合app:layout_goneMargin(在所约束控件gone掉才起作用)来使用，这在做一些简单的布局动画时候非常有用
+    -->
+
+    <Button
+        android:id="@+id/button01"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:text="button01" />
+
+    <Button
+        android:id="@+id/button02"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="10dp"
+        android:text="消失button01"
+        app:layout_constraintLeft_toRightOf="@id/button01"
+        app:layout_goneMarginLeft="110dp" />
+
+</android.support.constraint.ConstraintLayout>

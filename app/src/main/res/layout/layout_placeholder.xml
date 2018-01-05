@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--
+        Placeholder顾名思义，就是用来一个占位的东西，它可以把自己的内容设置为ConstraintLayout内的其它view。
+        因此它用来写布局的模版，也可以用来动态修改UI的内容。
+
+        注意我们在这里使用了 tools:parentTag="android.support.constraint.ConstraintLayout"，这样在编辑的时候就会让它按照ConstraintLayout来处理。
+
+        每个PlaceHolder都设置了自己的app:content属性，比如app:content="@+id/edit"，表示用id为edit的控件来填充这个位置
+    -->
+
+    <android.support.constraint.Placeholder
+        android:id="@+id/placeholder_action"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:content="@+id/kongjian"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/kongjian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/share_kongjian"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/qq" />
+
+    <ImageView
+        android:id="@+id/qq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/share_qq"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toRightOf="@id/kongjian"
+        app:layout_constraintRight_toLeftOf="@id/tw" />
+
+    <ImageView
+        android:id="@+id/tw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/share_tw"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toRightOf="@id/qq"
+        app:layout_constraintRight_toLeftOf="@id/wechat" />
+
+    <ImageView
+        android:id="@+id/wechat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/share_wechat"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toRightOf="@id/tw"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

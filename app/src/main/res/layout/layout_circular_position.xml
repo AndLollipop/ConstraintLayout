@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:id="@+id/constraintLayout"
+    android:layout_height="match_parent">
+
+    <!--
+        圆形定位
+            layout_constraintCircle : 约束控件的id
+            layout_constraintCircleRadius : 该控件中心点和约束控件中心点的距离
+            layout_constraintCircleAngle : 角度
+    -->
+
+    <ImageView
+        android:id="@+id/button01"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:src="@mipmap/share_tw"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="parent" />
+
+    <ImageView
+        android:id="@+id/button02"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:src="@mipmap/share_wechat"
+        app:layout_constraintCircle="@+id/button01"
+        app:layout_constraintCircleAngle="45"
+        app:layout_constraintCircleRadius="130dp" />
+
+</android.support.constraint.ConstraintLayout>

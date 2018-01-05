@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--
+        尺寸约束
+            对于设置控件的宽高提供了三种形式
+                 1、确定尺寸 12dp
+                 2、WRAP_CONTENT
+                 3、0dp，就等于MATCH_CONSTRAINT
+            唯一不同的是MATCH_CONSTRAINT,在Google文档中说明对于包含在ConstraintLayout中的小部件，不建议使用MATCH_PARENT
+
+            使用了MATCH_CONSTRAINT将使该控件和约束控件的属性一致，如果为其设置了margin属性在计算的时候也考虑在内
+
+    -->
+
+    <!--<Button-->
+    <!--android:id="@+id/button01"-->
+    <!--android:layout_width="200dp"-->
+    <!--android:layout_height="90dp"-->
+    <!--android:text="button01" />-->
+
+    <!--<Button-->
+    <!--android:id="@+id/button02"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginLeft="20dp"-->
+    <!--android:layout_marginRight="20dp"-->
+    <!--android:text="Button02"-->
+    <!--app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--app:layout_constraintRight_toRightOf="parent"-->
+    <!--app:layout_constraintTop_toBottomOf="@id/button01" />-->
+
+
+    <!--
+        比率
+            有两种取值
+               浮点值，表示宽度和高度之间的比率 （2,0.5）
+               width：height形式的比例 （5:1,1:5）
+            当有一个维度设置为MATCH_CONSTRAINT（0dp）时，就可以根据比率来进行计算
+            如果两个维度均设置为MATCH_CONSTRAINT（0dp），这种情况下，系统会使用满足所有约束条件和比率的最大尺寸，如果需要根据
+            一个维度的尺寸去约束另一个维度的尺寸则可以在比的前面加上W或者H来约束宽高，用逗号隔开
+            这里用“H”表示以高度为约束，高度的最大尺寸就是父控件的高度，“2:1”表示高：宽 = 2 : 1.
+            则宽度为高度的一半
+
+    -->
+
+    <Button
+        android:id="@+id/button03"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:text="Button02"
+        app:layout_constraintDimensionRatio="1:1" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="100dp"
+        android:text="button4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="H,2:1"
+        app:layout_constraintTop_toBottomOf="@id/button03" />
+
+
+    </android.support.constraint.ConstraintLayout>

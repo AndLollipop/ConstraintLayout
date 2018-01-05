@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_constraintHorizontal_chainStyle="spread">
+
+    <!--
+        创建一个链，如果一组控件通过双向链接在一起就构成了一个链
+
+        * spread - 元素将被展开（默认样式）
+        * 加权链 - 在spread模式下，如果某些小部件设置为MATCH_CONSTRAINT，则它们将拆分可用空间
+        * spread_inside - 类似，但链的端点将不会扩展
+        * packed - 链的元素将被打包在一起。 孩子的水平或垂直偏差属性将影响包装元素的定位
+    -->
+
+
+    <Button
+        android:id="@+id/button01"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="button01"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/button02"
+        app:layout_constraintHorizontal_bias="1.0"/>
+
+    <Button
+        android:id="@+id/button02"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="button02"
+        app:layout_constraintLeft_toRightOf="@id/button01"
+        app:layout_constraintRight_toLeftOf="@id/button03" />
+
+    <Button
+        android:id="@+id/button03"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="button02"
+        app:layout_constraintLeft_toRightOf="@id/button02"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

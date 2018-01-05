@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="220dp"
+    android:background="@color/colorAccent"
+    android:padding="8dp">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="5dp" />
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/head"
+        app:layout_constraintBottom_toTopOf="@id/name"
+        app:layout_constraintLeft_toLeftOf="@id/guideline1"
+        app:layout_constraintTop_toTopOf="@id/guideline2" />
+
+    <android.support.constraint.Barrier
+        android:id="@+id/img_barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="right"
+        app:constraint_referenced_ids="img" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lypop"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="@id/guideline1"
+        app:layout_constraintRight_toRightOf="@id/img_barrier"
+        app:layout_constraintTop_toBottomOf="@id/img" />
+
+    <android.support.constraint.Barrier
+        android:id="@+id/name_barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="name" />
+
+    <TextView
+        android:id="@+id/id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="名字ID：123456789"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@id/sex"
+        app:layout_constraintLeft_toRightOf="@id/img"
+        app:layout_constraintTop_toTopOf="@id/guideline2"
+        app:layout_constraintVertical_chainStyle="spread" />
+
+    <TextView
+        android:id="@+id/sex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="性别：man"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@id/sign"
+        app:layout_constraintLeft_toRightOf="@id/img"
+        app:layout_constraintTop_toBottomOf="@id/id" />
+
+    <TextView
+        android:id="@+id/sign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="个性签名：我思故我在"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/name_barrier"
+        app:layout_constraintLeft_toRightOf="@id/img"
+        app:layout_constraintTop_toBottomOf="@id/sex" />
+
+    <ImageView
+        android:id="@+id/bottom1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/share_tw"
+        app:layout_constraintBottom_toTopOf="@id/share1"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/bottom2" />
+
+    <ImageView
+        android:id="@+id/bottom2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/share_qq"
+        app:layout_constraintBottom_toTopOf="@id/share2"
+        app:layout_constraintLeft_toRightOf="@id/bottom1"
+        app:layout_constraintRight_toLeftOf="@id/bottom3" />
+
+    <ImageView
+        android:id="@+id/bottom3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/share_kongjian"
+        app:layout_constraintBottom_toTopOf="@id/share3"
+        app:layout_constraintLeft_toRightOf="@id/bottom2"
+        app:layout_constraintRight_toLeftOf="@id/bottom4" />
+
+    <ImageView
+        android:id="@+id/bottom4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/share_wechat"
+        app:layout_constraintBottom_toTopOf="@id/share4"
+        app:layout_constraintLeft_toRightOf="@id/bottom3"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/share1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="分享1"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/share2" />
+
+    <TextView
+        android:id="@+id/share2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="分享2"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/share1"
+        app:layout_constraintRight_toLeftOf="@id/share3" />
+
+    <TextView
+        android:id="@+id/share3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="分享3"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/share2"
+        app:layout_constraintRight_toLeftOf="@id/share4" />
+
+    <TextView
+        android:id="@+id/share4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="分享4"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/share3"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

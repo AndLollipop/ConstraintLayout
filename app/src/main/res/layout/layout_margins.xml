@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--
+        Bias 偏向layout_constraintLeft_toRightOf搭配bias能使约束更偏向于哪一边，默认是0.5
+         layout_constraintHorizontal_bias (0最左边 1最右边)
+         layout_constraintVertical_bias (0最上边 1 最底边)
+        例如定义horizontal 0.9 则会在水平方向上向右偏移至90%
+    -->
+
+    <Button
+        android:id="@+id/button01"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:text="button01"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>
